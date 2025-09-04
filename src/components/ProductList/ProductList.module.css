@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  width: 600px;
+  height: 600px;
+  object-fit: contain;
+}

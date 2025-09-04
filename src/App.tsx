@@ -1,5 +1,7 @@
+import ProductList from "./components/ProductList/ProductList";
+
 const App = () => {
-  return <h1>E-commerce</h1>;
+  return <ProductList />;
 };
 
 export default App;
