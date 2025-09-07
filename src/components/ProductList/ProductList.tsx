@@ -1,5 +1,6 @@
 import styles from "./ProductList.module.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Product = {
   id: number;
@@ -36,6 +37,7 @@ const ProductList = () => {
             <img src={product.image} alt={`Imagen de ${product.title}`} className={styles.image} />
             <h2>{product.title}</h2>
             <span>{`$ ${product.price}`}</span>
+            <Link to={`/productos/${product.id}`}>Ver detalle</Link>
           </div>
         );
       })}
