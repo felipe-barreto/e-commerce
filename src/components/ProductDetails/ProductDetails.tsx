@@ -1,6 +1,7 @@
 import styles from "./ProductDetails.module.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useCart } from "../../contexts/CartContext";
 
 type Product = {
   id: number;
@@ -15,6 +16,8 @@ const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
 
   const [product, setProduct] = useState<Product>();
+
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -40,7 +43,8 @@ const ProductDetails = () => {
           <h2>{product.title}</h2>
           <span>{`$ ${product.price}`}</span>
           <p>{product.description}</p>
-          <button>Agregar al carrito</button>
+          <button onClick={() => addToCart(product)}>Agregar al carrito</button>
+          <Link to={"/carrito"}>Ir al carrito</Link>
         </>
       )}
     </div>

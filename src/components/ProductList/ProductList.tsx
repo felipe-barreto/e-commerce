@@ -33,7 +33,7 @@ const ProductList = () => {
       <h1 className={styles.title}>E-commerce</h1>
       {products.map((product) => {
         return (
-          <div className={styles.container}>
+          <div key={product.id} className={styles.container}>
             <img src={product.image} alt={`Imagen de ${product.title}`} className={styles.image} />
             <h2>{product.title}</h2>
             <span>{`$ ${product.price}`}</span>
