@@ -10,8 +10,8 @@ const App = () => {
     <CartProvider>
       <Header />
       <Routes>
-        <Route path="/productos" element={<ProductList />} />
-        <Route path="/productos/:id" element={<ProductDetails />} />
+        <Route path="/productos/:category?" element={<ProductList />} />
+        <Route path="/producto/:id" element={<ProductDetails />} />
         <Route path="/carrito" element={<Cart />} />
         <Route path="/*" element={<Navigate to="/productos" />} />
       </Routes>
