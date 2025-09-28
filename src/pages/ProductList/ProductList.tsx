@@ -62,11 +62,10 @@ const ProductList = () => {
         {products.map((product) => {
           return (
             <div key={product.id} className="flex flex-col max-w-[424px]">
-              <Link to={`/producto/${product.id}`}>
+              <Link to={`/producto/${product.id}`} aria-label="Ver detalles del producto">
                 <div className="rounded-md bg-gradient-to-b from-gray-700 to-gray-400 p-5">
                   <img src={product.image} alt={`Imagen de ${product.title}`} className="size-96 object-contain" />
                 </div>
-
                 <h2 className="pt-2 font-bold text-balance">{product.title}</h2>
                 <span className="font-bold">{`$ ${product.price}`}</span>
               </Link>

@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useCart } from "../../contexts/CartContext";
+import { useCartActions } from "../../hooks/useCartActions";
 
 type Product = {
   id: number;
@@ -16,7 +16,7 @@ const ProductDetails = () => {
 
   const [product, setProduct] = useState<Product>();
 
-  const { addToCart } = useCart();
+  const { addToCart } = useCartActions();
 
   const [buttonText, setButtonText] = useState("Agregar al carrito");
 

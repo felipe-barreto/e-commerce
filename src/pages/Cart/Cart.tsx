@@ -1,8 +1,10 @@
-import { useCart } from "../../contexts/CartContext";
+import { useAppSelector } from "../../hooks/store";
+import { useCartActions } from "../../hooks/useCartActions";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, addToCart, removeFromCart, clearCart } = useCart();
+  const cart = useAppSelector((state) => state.cart);
+  const { addToCart, removeFromCart, clearCart } = useCartActions();
 
   const total = () => {
     const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -43,13 +45,17 @@ const Cart = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => removeFromCart(item.id)}
-                      className="size-9 cursor-pointer bg-gray-300 rounded-md sm:text-2xl font-bold">
+                      className="size-9 cursor-pointer bg-gray-300 rounded-md sm:text-2xl font-bold"
+                      aria-label="Reducir la cantidad de unidades del producto">
                       -
                     </button>
-                    <span className="sm:text-2xl font-bold">{item.quantity}</span>
+                    <span className="sm:text-2xl font-bold" aria-label="Cantidad de unidades del producto">
+                      {item.quantity}
+                    </span>
                     <button
                       onClick={() => addToCart(item)}
-                      className="size-9 cursor-pointer bg-gray-300 rounded-md sm:text-2xl font-bold">
+                      className="size-9 cursor-pointer bg-gray-300 rounded-md sm:text-2xl font-bold"
+                      aria-label="Aumentar la cantidad de unidades del producto">
                       +
                     </button>
                   </div>

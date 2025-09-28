@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { CartProvider } from "./contexts/CartProvider";
+import { store } from "./store";
+import { Provider } from "react-redux";
 import Header from "./components/Header/Header";
 import ProductList from "./pages/ProductList/ProductList";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
@@ -7,7 +8,7 @@ import Cart from "./pages/Cart/Cart";
 
 const App = () => {
   return (
-    <CartProvider>
+    <Provider store={store}>
       <Header />
       <Routes>
         <Route path="/productos/:category?" element={<ProductList />} />
@@ -15,7 +16,7 @@ const App = () => {
         <Route path="/carrito" element={<Cart />} />
         <Route path="/*" element={<Navigate to="/productos" />} />
       </Routes>
-    </CartProvider>
+    </Provider>
   );
 };
 
