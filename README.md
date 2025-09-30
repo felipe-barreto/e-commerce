@@ -1,6 +1,6 @@
 # Aplicación web - E-commerce
 
-Aplicación web responsive de un e-commerce, desarrollada como proyecto de portafolio.
+Aplicación web de e-commerce que permite a los usuarios ver los productos de la tienda, filtrarlos por categoría, consultar la información detallada de cada uno y agregarlos al carrito. En el carrito se listan los productos seleccionados, y se puede incrementar o reducir la cantidad de unidades de cada uno; además de mostrarse el precio total de la compra.
 
 <br>
 
@@ -13,6 +13,8 @@ Aplicación web responsive de un e-commerce, desarrollada como proyecto de porta
 - Tailwind CSS para los estilos.
 
 - React Router DOM para el enrutamiento.
+
+- React Redux y Redux Toolkit para el manejo del estado global.
 
 - Git para control de versiones.
 
