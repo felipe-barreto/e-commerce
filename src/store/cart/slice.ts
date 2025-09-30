@@ -11,7 +11,10 @@ export type Product = {
 
 export type CartItem = Product & { quantity: number };
 
-const initialState: CartItem[] = [];
+const initialState: CartItem[] = (() => {
+  const storedCart = localStorage.getItem("cart");
+  return storedCart ? JSON.parse(storedCart).cart : [];
+})();
 
 export const cartSlice = createSlice({
   name: "cart",
